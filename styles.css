@@ -12,6 +12,8 @@ body {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+     width: 100%;
+    overflow-x: hidden; /* Ensure no horizontal scroll */
     /* font-variation-settings:
         "wdth" 100;
         "YTLC" 500; */
@@ -232,6 +234,7 @@ select {
     background-color: #2b3945;
 }
 
+
 .dark-mode input, .dark-mode select, .dark-mode .back-btn, .dark-mode .border-buttons button {
     background-color: #324453;
     color: white;
@@ -248,10 +251,14 @@ select {
 
     .country-details {
         flex-direction: column;
+        align-items: center;
+        padding: 10px;
     }
 
     .country-details img {
         width: 100%;
+        width: 100%;
+        margin: 0 auto;
     }
 
     h1{
@@ -263,12 +270,27 @@ select {
         margin-top: 20px;
     }
 
-    .dark-mode, .country-details div {
+/*     .dark-mode, .country-details div {
         width: 100%;
         direction: flex;
         flex-direction: column;
        align-items: center;
+    } */
+
+    .back-btn {
+        width: 100px; /* Adjust the width for mobile */
+        margin-bottom: 20px;
     }
+
+    .dark-mode {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.dark-mode .country-card {
+/*     background-color: #2b3945; */
+    width: 100%;
+}
 
     .dark-mode, .back-btn {
         position: relative;
