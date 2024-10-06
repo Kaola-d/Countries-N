@@ -1,0 +1,275 @@
+/* Basic reset */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    /* font-variation-settings:
+        "wdth" 100;
+        "YTLC" 500; */
+}
+
+h1{
+    font-size: 25px;
+}
+
+.dark-mode {
+    background-color: #2b3945;
+    color: white;
+}
+
+.dark-mode h1 {
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: black;
+}
+
+.dark-mode header{
+    background-color: #324453;
+}
+
+header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.dark-mode header button {
+    color: white;
+}
+
+header button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+header button:hover {
+    opacity: 0.8;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.dark-mode .search input  {
+    background-color: #324453;
+}
+
+.search input {
+    padding: 10px;
+    padding-left: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: whitesmoke;
+}
+
+.search img.search-icon {
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: whitesmoke;
+}
+
+.dark-mode .selec{
+    background-color: #324453;
+}
+
+
+/* Country List */
+#country-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.country-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+}
+
+.country-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.country-card h2 {
+    font-size: 1.6em;
+    margin: 10px;
+}
+
+.country-card p {
+    font-size: 1em;
+    margin: 10px;
+}
+
+/* Detailed View */
+.country-details {
+    display: none;
+    padding: 20px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    align-items: flex-start;
+}
+
+.country-details img {
+    width: 30%;
+    height: auto;
+    margin-right: 200px;
+    margin-top: 100px;
+}
+
+.country-details div {
+    width: 100%;
+}
+
+.country-details h2, .country-details p, .country-details ul {
+    margin: 10px 0;
+    height: auto;
+    width: auto;
+}
+
+.country-details h2 {
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+
+.back-btn img {
+    width: 10px;
+    height: 16px;
+    margin-top: 0px;
+    color: white;
+    position: absolute;
+        left: -35px;
+        top: 10px;
+}
+
+
+/* Border Countries as Buttons */
+.border-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.border-buttons button {
+    padding: 8px 20px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.border-buttons button:hover {
+    background-color: #388e3c;
+}
+.dark-mode .border-buttons button:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Dark Mode */
+.dark-mode .country-card {
+    background-color: #2b3945;
+}
+
+.dark-mode input, .dark-mode select, .dark-mode .back-btn, .dark-mode .border-buttons button {
+    background-color: #324453;
+    color: white;
+}
+
+.dark-mode header h1 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #country-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .country-details {
+        flex-direction: column;
+    }
+
+    .country-details img {
+        width: 100%;
+    }
+
+    h1{
+        font-size: 15px;
+    }
+
+    .country-details div {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .dark-mode, .back-btn {
+        position: relative;
+    }
+    
+    .dark-mode, .back-btn img{
+        position: absolute;
+        left: -35px;
+        top: 10px;
+    }
+}
